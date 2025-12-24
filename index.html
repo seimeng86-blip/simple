@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ARモデル</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+    }
+
+    model-viewer {
+      width: 100%;
+      height: 100vh;
+    }
+
+    /* 自作ARボタン */
+    .ar-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 96px;
+      height: 96px;
+      border-radius: 48px;
+      background: #ffffff;
+      color: #000;
+      font-size: 14px;
+      font-weight: bold;
+      border: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <model-viewer
+    src="model.glb"
+    ar
+    ar-modes="quick-look"
+    camera-controls>
+
+    <!-- ★ 自作ARボタン -->
+    <button slot="ar-button" class="ar-btn">
+      ARで表示
+    </button>
+
+  </model-viewer>
+
+</body>
+</html>
